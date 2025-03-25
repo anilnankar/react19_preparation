@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+/* Base app styling */
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* Base app styling */
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #333;
+  padding: 10px 0px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Link styling */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Active link styling */
+.navbar a.active {
+  color: #ff9800;
+  background-color: #555;
+}
+
+/* Separator styling */
+.separator {
+  color: #fff;
+  padding: 0 10px;
+}
