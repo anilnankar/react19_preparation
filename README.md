@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+###  React Router
+npm install react-router-dom --save
+
+###  Redux installation 
+npm install redux react-redux --save
+npm install @reduxjs/toolkit react-redux --save
+
+### Install axios
+npm install axios --save
+
+### Install SWR
+npm install swr --save
+
+### Install Unit Testing
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom
+
+### Install React Player
+npm install react-player --save

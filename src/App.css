@@ -105,8 +105,7 @@
 .app-container {
   min-height: 500px;
   width: 100%;
-  padding: 20px;
-  background-color: #f9f9f9;
+  transition: background 0.3s ease;
   overflow: hidden; /* Prevents float collapsing */
 }
 
@@ -122,6 +121,7 @@
   background-color: #fff;
   transition: transform 0.3s ease;
   box-sizing: border-box; /* Includes padding in width */
+  min-height: 250px;
 }
 
 /* Section hover effect */
@@ -182,4 +182,40 @@
 .section-container:hover .tooltip {
   visibility: visible;
   opacity: 1;
+}
+
+
+
+.light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.secondary{
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  background: #0c49a5;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.video {
+  width: fit-content !important;
 }
