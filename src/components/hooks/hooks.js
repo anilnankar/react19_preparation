@@ -15,14 +15,14 @@ function Hooks() {
             <UseEffect />    
 
             <UseRef />
-
-            <UseReducer />
-            
+        
             <UseMemo />
 
-            <UseCallback />
-
             <CustomHooks />
+
+            <UseReducer />
+        
+            <UseCallback />
         </div>
     );
 }

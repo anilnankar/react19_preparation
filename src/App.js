@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
 import { Basics, Props, State, NotFound, Api, 
           Hooks, Routetuts, Forms,
-          UnitTesting, Error, LazyLoad
+          UnitTesting, Error, LazyLoad, Hoc, Solid
  } from './components';
 import useTheme from "./components/state/theme/useTheme";
 
@@ -23,8 +23,11 @@ function App() {
             <NavLink to="/state" className={({ isActive }) => (isActive ? "active" : "")}>
               State
             </NavLink>
-            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+            <NavLink to="/components" className={({ isActive }) => (isActive ? "active" : "")}>
               Components
+            </NavLink>
+            <NavLink to="/hoc" className={({ isActive }) => (isActive ? "active" : "")}>
+              Hoc
             </NavLink>
             <NavLink to="/routetuts" className={({ isActive }) => (isActive ? "active" : "")}>
               Routes
@@ -63,8 +66,11 @@ function App() {
                 <Route path="/" element={<Basics/>} />
                 <Route path="/state" element={<State />} />
                 <Route path="/api" element={<Api />} />
+                <Route path="/components" element={<Api />} />
+                <Route path="/hoc" element={<Hoc />} />
                 <Route path="/hooks" element={<Hooks />} />
                 <Route path="/forms" element={<Forms />} />
+                <Route path="/solid" element={<Solid />} />
                 <Route path="/routetuts" element={<Routetuts />} />
                 <Route path="/props/:id" element={
                   <Props 

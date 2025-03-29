@@ -1,20 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import ContentSection from "../utils/contentsection";
+import useCounter from './usecounter';
 
 function CustomHooks() {
 
-    const [count, setCount] = useState(0);
-    const updateCount = () => {
-        setCount(count+1);
-    };
+    const { count, increment, decrement, reset } = useCounter(5); // Start at 5
 
     return (
-        <div className="app-container">
-            <ContentSection title="Custom Hook" tooltip="const [count, setCount] = useState(0); :n const updateCount = () => { :n         setCount(count+1);:n     };:n">
-                <p>Count: <span>{count}</span></p>
-                <button onClick={updateCount} name="button">UpdateCount</button>
-            </ContentSection>
-        </div>
+        <ContentSection title="Custom Hook" tooltip="">
+            <span>Counter: {count}</span>
+            <br/>
+            <button onClick={increment}>Increment</button>
+            &nbsp;
+            <button onClick={decrement}>Decrement</button>
+            &nbsp;
+            <button onClick={reset}>Reset</button>
+        </ContentSection>
     );
 }
 

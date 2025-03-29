@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.StrictMode> {/* It will cause components to mount twice in development mode. */} 
     <Provider store={store}>
       <ThemeProvider> {/* Wrap App with ThemeProvider */}
         <App />

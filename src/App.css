@@ -219,3 +219,7 @@ button {
 .video {
   width: fit-content !important;
 }
+
+ul {
+  text-align: left;
+}

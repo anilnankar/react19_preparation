@@ -10,3 +10,5 @@ export { default as Props } from './props/props';
 export { default as Error } from './exception/error';
 export { default as NotFound } from './route/notfound';
 export { default as Routetuts } from './route/routetuts';
+export { default as Hoc } from './hoc/Hoc';
+export { default as Solid } from './solid/Solid';

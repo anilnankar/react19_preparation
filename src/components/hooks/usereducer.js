@@ -1,18 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, { useReducer } from "react";
 import ContentSection from "../utils/contentsection";
+
+
+// Reducer function to toggle the state
+const reducer = (state) => !state;
 
 function UseReducer() {
 
-  const [clicks, setClicks] = useState(0);
-  const updateClicks = () => {
-    setClicks(clicks+1);
-  };
+  const [isOn, dispatch] = useReducer(reducer, false); // Initial state is false
   
   return (
     <>
-      <ContentSection title="UseReducer" tooltip="const [clicks, setClicks] = useState(0); :n const updateClicks = () => { :n         setClicks(clicks+1);:n     };:n">
-        <p>Clicks: <span>{clicks}</span></p>
-        <button onClick={updateClicks} name="button">Update Clicks</button>
+      <ContentSection title="useReducer" tooltip="">
+        <span>Toggle light is: {isOn ? "ON" : "OFF"}</span><br/>
+        <button onClick={dispatch}>{isOn ? "Turn OFF" : "Turn ON"}</button>
       </ContentSection>
     </>
   );
