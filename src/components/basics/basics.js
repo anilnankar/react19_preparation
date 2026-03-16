@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useLocation } from "react-router-dom";
 import ContentSection from "../utils/contentsection";
 
@@ -9,15 +9,18 @@ function CurrentRoute() {
 
 
 function useCustomState(defaultValue) {
-    let state = defaultValue;
-  
-    const setState = (newValue) => {
-      state = newValue;
-      console.log("State updated:", state);
+    // wrap React state so the component re-renders when updated
+    const [state, setState] = useState(defaultValue);
+
+    const setCustomState = (newValue) => {
+        // support functional updates like useState does
+        setState(prev =>
+            typeof newValue === 'function' ? newValue(prev) : newValue
+        );
     };
-  
-    return { yourState: state, yourSetter: setState };
-  }
+
+    return { yourState: state, yourSetter: setCustomState };
+}
 
 
 function Basics() {
@@ -25,7 +28,7 @@ function Basics() {
     const name = "Anil";
     const {yourState: count, yourSetter: setCount} = useCustomState(1);
     const handleClick = () => {
-        setCount(count+1);
+        setCount((count) => count+1);
     }
 
     return (

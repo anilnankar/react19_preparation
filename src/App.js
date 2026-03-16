@@ -74,10 +74,11 @@ function App() {
                 <Route path="/routetuts" element={<Routetuts />} />
                 <Route path="/props/:id" element={
                   <Props 
-                    propText={"This is text"}
+                    propText={"This is text from parent component"}
                     propNum={4353}
                     propBool={false}
                     propArray={[1,2,3]}
+                    propObject={{ name: "Anil Nankar" }}
                   />
                   }
                 />

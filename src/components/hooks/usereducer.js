@@ -7,7 +7,7 @@ const reducer = (state) => !state;
 
 function UseReducer() {
 
-  const [isOn, dispatch] = useReducer(reducer, false); // Initial state is false
+  const [isOn, dispatch] = useReducer(reducer, true); // Initial state is false
   
   return (
     <>

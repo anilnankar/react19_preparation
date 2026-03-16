@@ -7,7 +7,7 @@ function State() {
 
     const [count, setCount] = useState(0);
     const updateCount = () => {
-        setCount(count+1);
+        setCount((count)=>count+1);
     };
 
     return (
@@ -16,9 +16,11 @@ function State() {
                 <p>Count: <span>{count}</span></p>
                 <button onClick={updateCount} name="button">UpdateCount</button>
             </ContentSection>
+
             <ContentSection title="Context API State" tooltip="">
                 <ContextApi />
             </ContentSection>
+
             <ContentSection title="Redux State" tooltip="">
                 <CounterRedux />
             </ContentSection>

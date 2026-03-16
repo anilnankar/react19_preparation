@@ -12,7 +12,8 @@ function Api() {
         fetch("https://jsonplaceholder.typicode.com/posts")
         .then((response)=>response.json())
         .then((json)=>setData(json))
-        .catch((error)=>console.error("Error fetching data:", error));
+        .catch((error)=>console.error("Error fetching data:", error))
+        .finally(()=>setLoader(false));
 
         axios("https://jsonplaceholder.typicode.com/todos")
         .then((response)=>setAxiosData(response.data))
@@ -25,7 +26,7 @@ function Api() {
         <div className="app-container">
             <ContentSection title="API using fetch()" tooltip="">
                 <h4>Fetched Data:</h4>
-                {data ? (
+                {!loader && data ? (
                     <ul>
                     {data.slice(0, 5).map((item) => (
                         <li key={item.id}>{item.title}</li>
@@ -38,7 +39,7 @@ function Api() {
 
             <ContentSection title="API using axios()" tooltip="">
                 <h4>Fetched Data:</h4>
-                {axiosData ? (
+                {!loader && axiosData ? (
                     <ul>
                     {axiosData.slice(0, 5).map((item) => (
                         <li key={item.id}>{item.title}</li>

@@ -5,14 +5,16 @@ function UseEffect() {
 
   const [count, setCount] = useState(0);
   const updateCount = () => {
-      setCount(count+1);
+      setCount(count => count+1);
   };
   
-  useEffect(() => {
-    setCount(5);
-  },[]);
+  useEffect(() => { 
+    console.log("Component mounted, setting count to 5");
+    setCount(5);  
+  }, []);
 
   useEffect(() => {
+    console.log("Count updated:", count);
       if (count > 10) {
           setCount(0);
       }

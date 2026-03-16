@@ -7,6 +7,8 @@ function LoginForm() {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
+        username: "",
+        mobile: "",
     });
     
     const handleChange = (e) => {
@@ -34,10 +36,24 @@ function LoginForm() {
                         onChange={handleChange}
                     />
                     <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter username"
+                        value={formData.username}
+                        onChange={handleChange}
+                    />
+                    <input
                         type="password"
                         name="password"
                         placeholder="Ente password"
                         value={formData.password}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type='text'
+                        name='mobile'
+                        placeholder='Enter mobile number'
+                        value={formData.mobile}
                         onChange={handleChange}
                     />
                 </div>

@@ -4,10 +4,11 @@ import ContentSection from "../utils/contentsection";
 function UseRef() {
 
   const inputRef = useRef();
+  console.log("useRef current value:", inputRef.current); // Logs the DOM element or null on initial render
 
   const handleFocus = () => {
     inputRef.current.focus(); // Focus the input field
-    inputRef.current.style.border = "2px solid blue"; // Modify the style
+    inputRef.current.style.border = "2px solid red"; // Modify the style
   };
 
   return (

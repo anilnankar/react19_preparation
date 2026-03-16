@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useLocation } from "react-router-dom";
 import ContentSection from "../utils/contentsection";
 
@@ -9,7 +9,7 @@ function CurrentRoute() {
 
 function Basics() {
     const name = "Anil";
-    const [username, setUsername] = React.useState("anilnankar");
+    const [username, setUsername] = useState("anilnankar");
 
     return (
         <div className="app-container">

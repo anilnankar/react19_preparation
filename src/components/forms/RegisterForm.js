@@ -5,6 +5,7 @@ function RegisterForm() {
     const [regFormData, setRegFormData] = useState({
         username: "",
         gender: "male",
+        country: "india",
         subscribe: false,
     });
 
@@ -42,21 +43,42 @@ function RegisterForm() {
                     value={regFormData.username}
                     onChange={handleRegFormChange}
                 />
-
-                <select name="gender" value={regFormData.gender} onChange={handleCheckboxChange}>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                <br/>
+                <select name="country" value={regFormData.country} onChange={handleCheckboxChange}>
+                    <option value="india">India</option>
+                    <option value="us">US</option>
                 </select>
-
+                <br/>
                 <label>
                     Subscribe:
                     <input
                     type="checkbox"
                     name="subscribe"
                     checked={regFormData.subscribe}
-                    onChange={handleRegFormChange}
+                    onChange={handleCheckboxChange}
                     />
                 </label>
+                <br/>
+                <label>
+                    Gender:
+                    Male
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        checked={regFormData.gender === "male"}
+                        onChange={handleRegFormChange}
+                    />
+                    Female
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        checked={regFormData.gender === "female"}
+                        onChange={handleRegFormChange}
+                    />
+                </label>
+                <br/>
             </div>
             
             <button type="submit">Submit</button>
