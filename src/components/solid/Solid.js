@@ -5,8 +5,7 @@ import Lsp from './lsp/Lsp';
 import Isp from './isp/Isp';
 import Dip from './dip/Dip';
 
-function Solid() {
-    
+function Solid() {    
     return (
         <div className="app-container">
             <Srp />

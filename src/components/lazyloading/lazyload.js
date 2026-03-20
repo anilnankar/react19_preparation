@@ -1,4 +1,4 @@
-import React, {useState, Suspense, lazy, useEffect} from "react";
+import {useState, Suspense, lazy} from "react";
 import ContentSection from "../utils/contentsection";
 
 const Profile = lazy(() => import("./profile")); // Lazy load profile
@@ -7,7 +7,7 @@ const Video = lazy(() => import("./video")); // Lazy Load video
 function LazyLoad() {
 
     const [showProfile, setShowProfile] = useState(false);
-    const [key, setKey] = useState(0); // Key to force re-render
+    const [refreshCount, setRefreshCount] = useState(0); // Key to force re-render
     const [showPlayer, setShowPlayer] = useState(false);
 
     return (
@@ -19,9 +19,9 @@ function LazyLoad() {
                 {showProfile && (
                     <>
                         <Suspense fallback={<h2>Profile is loading...</h2>}>
-                            <Profile key={key} />
+                            <Profile refreshKey={refreshCount} />
                         </Suspense>
-                        <button onClick={() => setKey(prevKey => prevKey + 1)} className="secondary">
+                        <button onClick={() => setRefreshCount(prevCount => prevCount + 1)} className="secondary">
                             Refresh Profile
                         </button>
                     </>
